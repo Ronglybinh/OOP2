@@ -9,22 +9,29 @@ namespace OOP2
 {
     internal class ToDoList
     {
-        List<Task> tasks =  new List<Task>();
-        public void insertTask(Task task)
+        List<Task> tasks = new List<Task>();
+        public void InsertTask(Task task)
         {
             tasks.Add(task);
         }
 
-        public void displayTasks()
+        public void DisplayTasks()
         {
             int i = 1;
-            foreach (var task in tasks)
+            foreach (var item in tasks)
             {
-
-                Console.Write(i+": ");
-                Console.WriteLine(task.getDescription());
-                i ++;
+                Console.WriteLine("{0}: {1}",i, item.GetDescription());
+                i++;
             }
+        }
+        public Task UpdateTask(int i, string updatedescription)
+        {
+            tasks[i].SetDescription(updatedescription);
+            return tasks[i];
+        }
+        public void RemoveTasks(int i)
+        { 
+            tasks.RemoveAt(i);
         }
     }
 }

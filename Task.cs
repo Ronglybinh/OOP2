@@ -8,24 +8,27 @@ namespace OOP2
 {
     internal class Task
     {
-        protected string description;
+        protected string Description;
 
         public Task()
         {
-            this.setDescription("Default task");
+            this.SetDescription("Default task");
         }
         public Task(string description)
         {
-            this.setDescription(description);
+            this.SetDescription(description);
         }
-        public string getDescription() { 
-            return description; 
+        public string GetDescription() 
+        { 
+            return Description; 
         }
-        public void setDescription(string description) { 
-            this.description = description;
+        public void SetDescription(string description) 
+        { 
+            this.Description = description;
         }
-        public void displayTask() // làm hàm này nè
+        public void displayTask() 
         {
+            Console.WriteLine(GetDescription());
         }
     }
 }
